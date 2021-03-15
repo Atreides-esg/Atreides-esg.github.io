@@ -3,49 +3,275 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="/path/to/tailwind.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link href="css/style.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
+        <script>
+         function findWithBackground(current) {
+             if (current.className.split(" ").includes("main-with-background")) {
+                 let color = current.style.getPropertyValue("background-color");
+                 if (color)
+                     document.getElementById("header-update-color").style.backgroundColor = color;
+                 return;
+             }
+             let parent = current.parentNode;
+             if (parent && parent.className)
+                 findWithBackground(parent);
+         }
+
+         window.onload = function() {
+             var firstScrollSpyEl = document.querySelector('[data-bs-spy="scroll"]')
+             window.addEventListener('activate.bs.scrollspy', function () {
+                 let selectedId = bootstrap.ScrollSpy.getInstance(firstScrollSpyEl)._activeTarget;
+                 let elts = document.getElementById(selectedId.substring(1, selectedId.length));
+                 console.log(selectedId);
+                 findWithBackground(elts);
+             })
+         }
+
+
+        </script>
     </head>
-    <body>
-        <nav id="navbar-example2" class="navbar fixed-top navbar-light bg-light px-3">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <ul class="nav nav-pills">
+    <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0">
+        <nav id="navbar"
+             class="navbar fixed-top navbar-light px-3 pt-0 m-0">
+            <a class="navbar-brand nav-link" href="#main-header">
+                <!--<img src="assets/logo.svg" alt="" width="30em" height="30em"> -->
+            </a>
+            <!-- <ul class="nav m-0 p-0" id="header-update-color" style="background: inherit"> -->
+            <ul class="nav m-0 p-0" style="background: inherit">
                 <li class="nav-item">
-                    <a class="nav-link" href="#fat">@fat</a>
+                    <a class="nav-link" href="#mission">Mission</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#mdo">@mdo</a>
+                    <a class="nav-link" href="#partners">Partners</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#one">one</a></li>
-                        <li><a class="dropdown-item" href="#two">two</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#three">three</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="#team">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
                 </li>
             </ul>
         </nav>
-        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" tabindex="0">
+        
+        <main>
+            <div id="main-header min-vw-100"
+                 class="main-with-background"
+                 style="background-color: var(--bg-1);">
 
-    <div style="min-height:100vh; background-color: red;">
-  <h4 id="fat">@fat</h4>
-  <p>...</p>
-    </div>
-  <div style="min-height:100vh; background-color: yellow;">
-      <h4 id="mdo">@mdo</h4>
-      <p>...</p>
-  </div>
-  <h4 id="one">one</h4>
-  <p>...</p>
-  <h4 id="two">two</h4>
-  <p>...</p>
-  <h4 id="three">three</h4>
-  <p>...</p>
-</div>
+                <div class="vh-100">
+                    <div class="row align-items-center m-0 p-0 vh-100">
+                        <div class="col m-0 p-0" >
+                            <div class="stackable-container">
+                                <div class="stackable-element vh-100" style="z-index: 1">
+                                    <img class="h-100" src="assets/dashes-main.svg">
+                                </div>
+                                <div class="stackable-element" style="z-index: 2;">
+                                    <div class="m-auto w-75 h-100 d-flex align-content-center">
+                                        <img class="w-100" src="assets/landing.svg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                            <img class="w-20" src="assets/logo.svg">
+                            <h1 style="color:#3E73FB"> Atreides.ai </h1>
+                            </div>
+                            <div class="w-75 pt-5">
+                                <h3> All-in-one platform to score your investment targets for social impact.</h3>
+                                <ul>
+                                    <li>Access trustworthy and audited data for 2,000+ companies, taking the full value chain into account.</li>
+                                    <li>Save time on engagement</li>
+                                    <li>Truly optimise your due diligence and compliance processes.</li>
+                                </ul>
+                            </div>
+                            <div class="w-75 pt-5">
+                                <a href="#contact" class="btn btn-primary" role="button">Contact us!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="mission"
+                 class="main-with-background min-vh-100"
+                 style="background-color: var(--bg-2);">
+                <div class="container vh-100">
+                    <div class="row align-items-center h-100">
+                        <div class="col" >
+                            <div class="stackable-container">
+                                <div class="stackable-element" style="z-index: 3;">
+                                    <div class="d-flex align-content-center h-100" style="width:30%">
+                                        <img  src="assets/dashes-analytics.svg">
+                                    </div>
+                                </div>
+                                <div class="stackable-element" style="z-index: 5;">
+                                    <div class="m-auto d-flex align-content-center h-100 h-100" style="padding-left:20%;" >
+                                        <div class="w-50 align-self-center">
+                                            <img  src="assets/guy_in_front_pp.png" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col" >
+                            <div class="pt-5">
+                                <h4>ESG analysts:</h4>
+                                <p>
+                                    Save time by accessing exactly the social data you need. Engage directly with companies through our user-friendly platform.
+                                </p>
+                            </div>
+                            <div class="pt-5">
+                                <h4>Portfolio Managers:</h4>
+                                <p>
+                                    Focus on value-added activities thanks to actionable corporate social data. All our data is summarised in a simple transparent score, ready to share with your clients or in SFDR-compliant reports.
+                                </p>
 
+                            </div>
+                            <div class="pt-5">
+                                <h4>Why choose us?</h4>
+                                <p>
+                                    Our scoring is transparent, trustworthy, clear and easy to use. 
+                                </p>
+
+                                <ul>
+                                    <li>We facilitate engagement by identifying missing indicators and incoherences.</li>
+                                    <li>We offer the best market coverage for social indicators.</li>
+                                    <li>All the data is audited and stored on one single user-friendly platform.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="main-with-background min-vh-100"
+                style="background-color: var(--bg-3);">
+
+                <div class="container">
+                    <div id="partners">
+                        <div class="pt-5">
+                            <h4>They trust us</h4>
+                            <div class="d-flex flex-row flex-wrap mb-3 justify-content-center">
+
+                                <div style="height:7em; width:27em" class="card m-3">
+                                    <div class="card-body acard-partner">
+                                        <img class=" acard-partner-image"  src="assets/partners/sg.png"></img>
+                                    </div>
+                                </div>
+                                <div style="height:7em; width:20em" class="card m-3">
+                                    <div class="acard acard-partner">
+                                        <img class="acard-partner-image" src="assets/partners/rotschild.jpg"></img>
+                                    </div>
+                                </div>
+                                <div style="height:7em; width:27em" class="card m-3">
+                                    <div class="acard acard-partner">
+                                        <img class="acard-partner-image" src="assets/partners/fir.jpg"></img>
+                                    </div>
+                                </div>
+                                <div style="height:7em;width:10em" class="card m-3">
+                                    <div class="acard acard-partner">
+                                        <img class="acard-partner-image" src="assets/partners/xhex.jpg"></img>
+                                    </div>
+                                </div>
+                                <div style="height:7em; width:19em" class="card m-3">
+                                    <div class="acard acard-partner">
+                                        <img class="acard-partner-image" src="assets/partners/bdl.jpg"></img>
+                                    </div>
+                                </div>
+                                <div style="height:7em; width:14em" class="card m-3">
+                                    <div class="acard acard-partner">
+                                        <img class="acard-partner-image" src="assets/partners/yomoni.png"></img>
+                                    </div>
+                                </div>
+                                <div style="height:7em; width:7em" class="card m-3">
+                                    <div class="acard acard-partner">
+                                        <img class="acard-partner-image" src="assets/partners/launchpad.png"></img>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="team">
+                        <div class="pt-5">
+                            <h4>Our team</h4>
+                            <p>
+                                Our team combines experience in strategic consulting (Bain), artificial intelligence (Amazon) and product development (Nabla) to deliver a high value, user-friendly solution.
+                            </p>
+
+                            <div class="d-flex flex-row flex-wrap mb-3 justify-content-center">
+                                <div class="card m-3" style="width: 10rem;">
+                                    <img src="assets/team/sarah.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Sarah, CEO</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">X/HEC/ENS, Bain</h6>
+                                    </div>
+                                </div>
+                                <div class="card m-3" style="width: 10rem;">
+                                    <img src="assets/team/guillaume.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Guillaume, CTO</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">X/HEC/UTC, Amazon</h6>
+                                    </div>
+                                </div>
+                                <div class="card m-3" style="width: 10rem;">
+                                    <img src="assets/team/mathieu.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Mathieu, CCO</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">X/HEC, Amazon</h6>
+                                    </div>
+                                </div>
+                                <div class="card m-3" style="width: 10rem;">
+                                    <img src="assets/team/romain.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Romain, DA</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">ENS/EPFL, Nabla</h6>
+                                    </div>
+                                </div>
+                                <div class="card m-3" style="width: 10rem;">
+                                    <img src="assets/team/anna.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Anna, CPO</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">X/HEC/ENS, Nabla</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="contact">
+                        <div class="pt-5">
+                            <h4>Contact us:</h4>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="password" class="form-control" id="name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="content" class="form-label">Write your message</label>
+                                    <textarea class="form-control"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m-5"></div>
+            <div class="container-fluid" style="height:5em; background-color: var(--footer-color)">
+                <div class="d-flex justify-content-center h-100">
+                    <p class="text-center align-self-center" style="color:white"> Illustrations from <a href="https://icons8.com/illustrations/pricing">icons8</a> </p>
+                </div>
+            </div>
+        </main>
     </body>
 </html>
