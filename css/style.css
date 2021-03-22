@@ -1,5 +1,5 @@
 :root {
-    --bg-1: #F5F8FF;
+    --bg-1: #f5f8ff;
     --bg-2: #FFFFFF;
     --bg-3: #F9F9F9;
     --border-color: #E1E1E1;
@@ -20,6 +20,21 @@ h4 {
     color: #1E1E1E !important;
     font-size: 1.5em !important;
     font-weight: 100 !important;
+}
+
+.team-card {
+    width: 14rem;
+    text-align: center;
+}
+
+.pink-bg {
+    background: #f21368;
+    height: 10px;
+}
+
+.social-img {
+    margin: 5px;
+    height: 35px;
 }
 
 .acard {
