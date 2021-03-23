@@ -91,32 +91,33 @@ ul {
     width: 10%;
 }
 
+.pt-5 {
+    text-align:center;
+}
+
 .mission-column {
+    width: 20%;
+    text-align:center;
+}
+
+.mission-row {
+    display: flex;
+    left-padding:10%;
+    right-padding:10%;
+    justify-content:space-between;
+}
+
+.feature-column {
     float: left;
     display: inline;
     width: 10%;
     text-align:center;
 }
 
-.mission-row {
+.feature-row {
     display: flex;
     justify-content: space-around;
     left-padding:10%;
-    right-padding:50px;
-    top-padding:10px;
-}
-
-.mission-column2 {
-    float: left;
-    width: 25%;
-    text-align:left;
-    left-padding:50px;
-    right-padding:50px;
-}
-
-.mission-row2 {
-    display: flex;
-    left-padding:50px;
     right-padding:50px;
     top-padding:10px;
 }
