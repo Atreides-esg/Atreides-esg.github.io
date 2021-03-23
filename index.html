@@ -37,115 +37,132 @@
     <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0">
         <nav id="navbar"
              class="navbar fixed-top navbar-light px-3 pt-0 m-0">
-            <a class="navbar-brand nav-link" href="#main-header">
-                <!--<img src="assets/logo.svg" alt="" width="30em" height="30em"> -->
+            <a class="navbar-brand nav-link" href="#home">
+                <img src="assets/logo.svg" alt="" width="30em" height="30em"> 
+                <text style="color:#3E73FB" alt="" width="20em" height="20em"> Atreides.ai </text>
             </a>
             <!-- <ul class="nav m-0 p-0" id="header-update-color" style="background: inherit"> -->
-            <ul class="nav m-0 p-0" style="background: inherit">
-                <li class="nav-item">
-                    <a class="nav-link" href="#mission">Mission</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#partners">Partners</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#team">Team</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-            </ul>
+                <ul class="nav m-0 p-0" style="background: inherit;">
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-weight: bold;" href="#mission">Mission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-weight: bold;" href="#partners">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-weight: bold;" href="#team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-weight: bold;" href="#contact">Contact</a>
+                    </li>
+                </ul>
         </nav>
         
         <main>
-            <div id="main-header min-vw-100"
-                 class="main-with-background"
+            <div id="home"
+                 class="main-with-background min-vw-100 min-vh-100"
                  style="background-color: var(--bg-1);">
-
-                <div class="vh-100">
-                    <div class="row align-items-center m-0 p-0 vh-100">
-                        <div class="col m-0 p-0" >
-                            <div class="stackable-container">
-                                <div class="stackable-element vh-100" style="z-index: 1">
-                                    <img class="h-100" src="assets/dashes-main.svg">
-                                </div>
-                                <div class="stackable-element" style="z-index: 2;">
-                                    <div class="m-auto w-75 h-100 d-flex align-content-center">
-                                        <img class="w-100" src="assets/landing.svg">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div>
-                            <img class="w-20" src="assets/logo.svg">
-                            <h1 style="color:#3E73FB"> Atreides.ai </h1>
-                            </div>
-                            <div class="w-75 pt-5">
-                                <h3> All-in-one platform to score your investment targets for social impact.</h3>
-                                <ul>
-                                    <li>Access trustworthy and audited data for 2,000+ companies, taking the full value chain into account.</li>
+                <div class="container d-flex ml-0 mr-0" style="height: 90vh;">
+                    <div class="row align-items-center m-0 p-0">
+                        <div class="col" align="center">
+                            <img src="assets/logo.svg" alt="" width="80em" height="80em">
+                            <div class="w-75 pt-3">
+                                <h3 style="color:#3E73FB"> 
+                                    All-in-one platform to score your investment targets for social impact.
+                                </h3>
+                                <ul font-size="2em" align="left">
+                                    <li>Access trustworthy and audited data for 2,000+ companies</li>
+                                    <li>Take the full value chain into account.</li>
                                     <li>Save time on engagement</li>
                                     <li>Truly optimise your due diligence and compliance processes.</li>
                                 </ul>
                             </div>
-                            <div class="w-75 pt-5">
-                                <a href="#contact" class="btn btn-primary" role="button">Contact us!</a>
+                            <div class="pt-5 align-content-center">
+                                <a href="#contact" class="btn btn-primary" role="button">Book a demo</a>
+                                <span style="padding-left:10%"></span>
+                                <a href="#mission" class="btn btn-secondary mr-2"  role="button">Our mission</a>
                             </div>
                         </div>
+                        <div class="col" align="center" >
+                            <!-- To add the dashes
+                            <div class="stackable-container">
+                                <div class="stackable-element" style="z-index: 1">
+                                    <img class="h-90" src="assets/dashes-main.svg">
+                                </div>
+                            
+                                <div class="stackable-element" style="z-index: 2;"> -->
+                                    <div class="m-auto w-85 align-content-center">
+                                        <img class="w-100" src="assets/landing.svg">
+                                    </div>
+                                <!--</div>
+                            </div>-->
+                        </div>
                     </div>
+                </div>
+                <div class="col min-vh-10">
+                    <a class="navbar-brand nav-link" align="center" href="#mission">
+                        <img src="assets/arrow-down.png" alt="" width="30em" height="30em">
+                    </a>
                 </div>
             </div>
             
             <div id="mission"
                  class="main-with-background min-vh-100"
                  style="background-color: var(--bg-2);">
-                <div class="container vh-100">
-                    <div class="row align-items-center h-100">
                         <div class="col" >
-                            <div class="stackable-container">
-                                <div class="stackable-element" style="z-index: 3;">
-                                    <div class="d-flex align-content-center h-100" style="width:30%">
-                                        <img  src="assets/dashes-analytics.svg">
-                                    </div>
+                            <div class="pt-5">
+                                <h4>A single point of contact for investors and companies on ESG data.</h4>
+                            </div>
+
+                            <div class="mission-row">
+                                <div class="mission-column">
+                                    <img src="assets/mission/analyst.svg" style="width:25%" />
+                                    <h5>Analysts</h5>
+                                    <p> Never spend five days engaging a company for reliable data again.</p>
                                 </div>
-                                <div class="stackable-element" style="z-index: 5;">
-                                    <div class="m-auto d-flex align-content-center h-100 h-100" style="padding-left:20%;" >
-                                        <div class="w-50 align-self-center">
-                                            <img  src="assets/guy_in_front_pp.png" class="img-fluid">
-                                        </div>
-                                    </div>
+                                <div class="mission-column">
+                                    <img src="assets/mission/portfolio_manager.svg" style="width:25%" />
+                                    <h5>Portfolio Managers</h5>
+                                    <p> Easy compliance and one-click reports. </p>
+                                </div>
+                                <div class="mission-column">
+                                    <img src="assets/mission/csr_touchpoint.svg" style="width:25%" />
+                                    <h5>CSR Touchpoints</h5>
+                                    <p> Get rid of endless questionnaires and centralise your data</p>
+                                </div>
+                                <div class="mission-column">
+                                    <img src="assets/mission/ceo.svg" style="width:25%" />
+                                    <h5>Company CEOs</h5>
+                                    <p> Align disclosures with investor requirements</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col" >
+            </div>
+            <div id="features"
+                 class="main-with-background min-vh-100"
+                 style="background-color: var(--bg-1);">
+                <div class="col" >
                             <div class="pt-5">
-                                <h4>ESG analysts:</h4>
-                                <p>
-                                    Save time by accessing exactly the social data you need. Engage directly with companies through our user-friendly platform.
-                                </p>
+                                <h4>The social media of engagement promising:</h4>
                             </div>
-                            <div class="pt-5">
-                                <h4>Portfolio Managers:</h4>
-                                <p>
-                                    Focus on value-added activities thanks to actionable corporate social data. All our data is summarised in a simple transparent score, ready to share with your clients or in SFDR-compliant reports.
-                                </p>
+                    <div class="feature-row">
+                                    <div class="feature-column">
+                                    <img src="assets/mission/goal.png" style="width:100%" />
+                                        <h5>Trust</h5>
+                                        <p>your ESG data</p>
+                                    </div>
+                                    <div class="feature-column">
+                                    <img src="assets/mission/goal.png" style="width:100%"/>
+                                        <h5>Reach out</h5>
+                                        <p>directly</p>
+                                    </div>
+                                    <div class="feature-column">
+                                    <img src="assets/mission/goal.png" style="width:100%"/>
+                                        <h5>Benchmark</h5>
+                                        <p>portfolio companies</p>
 
-                            </div>
-                            <div class="pt-5">
-                                <h4>Why choose us?</h4>
-                                <p>
-                                    Our scoring is transparent, trustworthy, clear and easy to use. 
-                                </p>
-
-                                <ul>
-                                    <li>We facilitate engagement by identifying missing indicators and incoherences.</li>
-                                    <li>We offer the best market coverage for social indicators.</li>
-                                    <li>All the data is audited and stored on one single user-friendly platform.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                                    </div>
+                                </div>
                 </div>
             </div>
             <div
