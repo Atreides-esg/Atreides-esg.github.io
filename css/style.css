@@ -57,16 +57,6 @@ nav .active, .nav-link:hover {
     height: 35px;
 }
 
-.feature-img {
-    margin: 10px;
-    width:40%;
-}
-
-.feature-text {
-    font-weight: bold;
-    color: #f21368;
-}
-
 .acard {
     background-color: white;    
     border-radius: 5px;
@@ -123,12 +113,34 @@ ul {
     justify-content:space-between;
 }
 
+
+.transparent-card {
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+    word-wrap:break-word;
+    background-clip:border-box;
+    width: 30%;
+}
+
 .feature-column {
-    width: 25%;
+    width: 10%;
     text-align:center;
 }
 
 .feature-row {
     display: flex;
     justify-content: space-around;
+}
+
+.feature-img {
+    margin: auto;
+    padding-bottom: 20px;
+    width:30%;
+}
+
+.feature-text {
+    font-weight: bold;
+    color: #f21368;
 }
