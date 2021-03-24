@@ -23,10 +23,23 @@ body {
     border: 3px solid #3E73FB;
 }
 
+.btn.btn-secondary:hover {
+    font-size: 1em !important;
+    color: white;
+    background-color: #3E73FB;
+    border: 3px solid #3E73FB;
+}
+
 h4 {
     color: #1E1E1E !important;
     font-size: 2em !important;
     font-weight: 100 !important;
+}
+
+nav .active, .nav-link:hover {
+    color:white;
+    background-color: #3E73FB;
+    font-weight: bold;
 }
 
 .team-card {
@@ -68,13 +81,6 @@ h4 {
     object-fit: contain;
 }
 
-nav .nav-link {
-    font-weight: 300;
-    color: black;
-}
-nav .active {
-    font-weight: 500;
-}
 .acard-partner-image {
     height:100%;
     object-fit: contain;
