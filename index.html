@@ -13,30 +13,30 @@
         <link href="css/carousel.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="js/contact_form.js"></script>
         <script>
-         function findWithBackground(current) {
-             if (current.className.split(" ").includes("main-with-background")) {
-                 let color = current.style.getPropertyValue("background-color");
-                 if (color)
-                     document.getElementById("header-update-color").style.backgroundColor = color;
-                 return;
-             }
-             let parent = current.parentNode;
-             if (parent && parent.className)
-                 findWithBackground(parent);
-         }
+            function findWithBackground(current) {
+                if (current.className.split(" ").includes("main-with-background")) {
+                    let color = current.style.getPropertyValue("background-color");
+                    if (color)
+                        document.getElementById("header-update-color").style.backgroundColor = color;
+                    return;
+                }
+                let parent = current.parentNode;
+                if (parent && parent.className)
+                    findWithBackground(parent);
+            }
 
-         window.onload = function() {
-             var firstScrollSpyEl = document.querySelector('[data-bs-spy="scroll"]')
-             window.addEventListener('activate.bs.scrollspy', function () {
-                 let selectedId = bootstrap.ScrollSpy.getInstance(firstScrollSpyEl)._activeTarget;
-                 let elts = document.getElementById(selectedId.substring(1, selectedId.length));
-                 console.log(selectedId);
-                 findWithBackground(elts);
-             })
-         }
-
-
+            window.onload = function() {
+                var firstScrollSpyEl = document.querySelector('[data-bs-spy="scroll"]')
+                window.addEventListener('activate.bs.scrollspy', function () {
+                    let selectedId = bootstrap.ScrollSpy.getInstance(firstScrollSpyEl)._activeTarget;
+                    let elts = document.getElementById(selectedId.substring(1, selectedId.length));
+                    console.log(selectedId);
+                    findWithBackground(elts);
+                })
+            }
         </script>
     </head>
     <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0">
@@ -44,12 +44,12 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4J89QK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
         <nav id="navbar"
-             class="navbar fixed-top navbar-light px-3 pt-0 m-0">
+             class="navbar fixed-top navbar-light px-3 pt-0 m-0"
+             style="background-color: var(--bg-1);">
             <a class="navbar-brand" href="#home">
                 <img src="assets/logo.svg" alt="" width="30em" height="30em"> 
                 <text style="color:#3E73FB"> Atreides.ai </text>
             </a>
-            <!-- <ul class="nav m-0 p-0" id="header-update-color" style="background: inherit"> -->
                 <ul class="nav m-0 p-0" style="background: inherit;">
                     <li class="nav-item">
                         <a class="nav-link" href="#mission">Mission</a>
@@ -108,7 +108,7 @@
                     </div>
                 </div>
                 <div class="col min-vh-10">
-                    <a class="navbar-brand nav-link" href="#mission">
+                    <a class="container" href="#mission">
                         <img src="assets/arrow-down.png" style="display: block; margin: auto"  alt="" width="30em" height="30em">
                     </a>
                 </div>
@@ -321,21 +321,21 @@
                 <div id="contact" style="width: 45%; padding: 30px">
                     <div class="pt-5">
                         <h4>Contact us:</h4>
-                        <form>
+                        <form method="post" enctype="text/plain">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                                <input id="contact_email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                             </div>
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
-                                <input type="password" class="form-control" id="name">
+                                <input id="contact_name" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label for="content" class="form-label">Write your message</label>
-                                <textarea class="form-control" id="content"></textarea>
+                                <input id="contact_message" class="form-control">
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" onclick="sendEmail()">Submit</button>
                         </form>
                     </div>
                 </div>
