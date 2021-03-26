@@ -27,25 +27,11 @@
         <script src="https://smtpjs.com/v3/smtp.js"></script>
         <script src="js/contact_form.js"></script>
         <script>
-            function findWithBackground(current) {
-                if (current.className.split(" ").includes("main-with-background")) {
-                    let color = current.style.getPropertyValue("background-color");
-                    if (color)
-                        document.getElementById("header-update-color").style.backgroundColor = color;
-                    return;
-                }
-                let parent = current.parentNode;
-                if (parent && parent.className)
-                    findWithBackground(parent);
-            }
-
             window.onload = function() {
                 var firstScrollSpyEl = document.querySelector('[data-bs-spy="scroll"]')
                 window.addEventListener('activate.bs.scrollspy', function () {
                     let selectedId = bootstrap.ScrollSpy.getInstance(firstScrollSpyEl)._activeTarget;
                     let elts = document.getElementById(selectedId.substring(1, selectedId.length));
-                    console.log(selectedId);
-                    findWithBackground(elts);
                 })
             }
         </script>
@@ -80,48 +66,40 @@
                     </li>
                 </ul>
         </nav>
-        
         <main>
             <div id="home" class="main-with-background min-vw-100 min-vh-100" style="background-color: var(--bg-1);">
-                <div class="container d-flex ml-0 mr-0" style="height: 90vh;">
+                <div class="d-flex flex-row flex-wrap mb-3 justify-content-center" style="padding: 200px 0">
                     <div class="row align-items-center m-0 p-0">
-                        <div class="col" align="center">
-                            <img src="assets/logo.svg" alt="" width="80em" height="80em">
-                            <div class="w-75 pt-3">
-                                <h3 style="color:#3E73FB"> 
-                                    All-in-one platform to score your investment targets for social impact.
-                                </h3>
-                                <ul style="padding-left: 0; text-align: left">
-                                    <li>Access trustworthy and audited data for 2,000+ companies</li>
-                                    <li>Take the full value chain into account</li>
-                                    <li>Save time on engagement</li>
-                                    <li>Truly optimise your due diligence and compliance processes</li>
-                                </ul>
-                            </div>
-                            <div class="pt-5 align-content-center">
-                                <a href="#contact" class="btn btn-primary" role="button">Book a demo</a>
-                                <span style="padding-left:10%"></span>
-                                <a href="#mission" class="btn btn-secondary mr-2"  role="button">Our mission</a>
-                            </div>
+                        <div class="col" style="display: flex; align-items: center; flex-direction: column">
+                                <img src="assets/logo.svg" alt="..." width="80em" height="80em">
+                                <div class="w-75 pt-3">
+                                    <h3 style="color:#3E73FB">
+                                        All-in-one platform to score your investment targets for social impact.
+                                    </h3>
+                                    <ul style="padding-left: 0; text-align: left">
+                                        <li>Access trustworthy and audited data for 2,000+ companies</li>
+                                        <li>Take the full value chain into account</li>
+                                        <li>Save time on engagement</li>
+                                        <li>Truly optimise your due diligence and compliance processes</li>
+                                    </ul>
+                                </div>
+                                <div class="pt-5"  style="display: flex; justify-content: center; flex-direction: row; width: 100%">
+                                    <a href="#contact" class="btn btn-primary" role="button">Book a demo</a>
+                                    <span style="padding-left:10%"></span>
+                                    <a href="#mission" class="btn btn-secondary mr-2"  role="button">Our mission</a>
+                                </div>
+                                <br>
                         </div>
                         <div class="col">
-                            <!-- To add the dashes
-                            <div class="stackable-container">
-                                <div class="stackable-element" style="z-index: 1">
-                                    <img class="h-90" src="assets/dashes-main.svg">
-                                </div>
-                                <div class="stackable-element" style="z-index: 2;"> -->
-                                    <div class="m-auto w-85 align-content-center">
-                                        <img class="w-100" src="assets/landing.svg" alt="...">
-                                    </div>
-                                <!--</div>
-                            </div>-->
+                           <div style="display: flex; justify-content: center; padding: 50px">
+                               <img src="assets/landing.svg" alt="..." style="min-width: 200px; margin: auto; width: 75%">
+                           </div>
                         </div>
                     </div>
                 </div>
                 <div class="col min-vh-10">
                     <a class="container" href="#mission">
-                        <img src="assets/arrow-down.png" style="display: block; margin: auto"  alt="" width="30em" height="30em">
+                        <img src="assets/arrow-down.png" style="display: block; margin: auto" alt="" width="30em" height="30em">
                     </a>
                 </div>
             </div>
@@ -298,57 +276,66 @@
                 </div>
                 <br>
             </div>
-            <div style="display: flex; height: auto; background-color: white;">
-                <div class="stackable-container" style="width: 33%; padding-left:50px; padding-right: 50px">
-                    <div class="stackable-element" style="z-index: 3;">
-                        <div class="d-flex align-content-center h-100" style="width:30%">
-                            <img src="assets/dashes-analytics.svg" alt="...">
-                        </div>
-                    </div>
-                    <div class="stackable-element" style="z-index: 5;">
-                        <div class="d-flex h-100 h-100" style="padding-left:15%;" >
-                            <div class=" align-self-center">
-                                <img src="assets/guy_in_front_pp.png" class="img-fluid" alt="...">
+            <div class="main-with-background" style="background-color: white;">
+                <div class="container">
+                    <div class="d-flex flex-row flex-wrap mb-3 justify-content-center">
+                        <div class="col">
+                            <div class="stackable-container">
+                                <div class="stackable-element" style="z-index: 3;">
+                                    <div class="d-flex align-content-center h-100" style="width:30%">
+                                        <img src="assets/dashes-analytics.svg" alt="...">
+                                    </div>
+                                </div>
+                                <div class="stackable-element" style="z-index: 5;">
+                                    <div class="d-flex h-100 h-100" style="padding-left:15%;" >
+                                        <div class=" align-self-center">
+                                            <img src="assets/guy_in_front_pp.png" class="img-fluid" alt="...">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div style="width: 20%;" class="text-center">
-                    <div style="padding: 10px; height: 95%; display: flex; align-items: center; justify-content: center; flex-direction: column">
-                        <p>Networks</p>
-                        <div>
-                            <a href="https://www.linkedin.com/company/71758684/">
-                                <img src="assets/networks/linkedin.svg" class="social-img" alt="...">
-                            </a>
-                            <a href="https://www.linkedin.com/company/71758684/">
-                                <img src="assets/networks/facebook.png" class="social-img" alt="...">
-                            </a>
+                        <div class="col">
+                            <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100%; min-width: 200px">
+                                <div>
+                                    <p>Networks</p>
+                                </div>
+                                <div>
+                                    <a href="https://www.linkedin.com/company/71758684/">
+                                        <img src="assets/networks/linkedin.svg" class="social-img" alt="...">
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/71758684/">
+                                        <img src="assets/networks/facebook.png" class="social-img" alt="...">
+                                    </a>
+                                </div>
+                                <div>
+                                    <p>Illustrations from <a href="https://icons8.com/illustrations/pricing">icons8</a> </p>
+                                </div>
+                            </div>
                         </div>
-
-                    </div>
-                    <div style="height: 5%;">
-                        <p>Illustrations from <a href="https://icons8.com/illustrations/pricing">icons8</a> </p>
-                    </div>
-                </div>
-                <div id="contact" style="width: 45%; padding: 30px">
-                    <div class="pt-5">
-                        <h4>Contact us:</h4>
-                        <form method="post" enctype="text/plain">
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email address</label>
-                                <input id="contact_email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        <div class="col">
+                            <div id="contact">
+                                <div class="pt-5">
+                                    <h4>Contact us:</h4>
+                                    <form method="post" enctype="text/plain">
+                                        <div class="mb-3">
+                                            <label for="contact_email" class="form-label">Email address</label>
+                                            <input id="contact_email" type="email" class="form-control" aria-describedby="emailHelp">
+                                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="contact_name" class="form-label">Name</label>
+                                            <input id="contact_name" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="contact_message" class="form-label">Write your message</label>
+                                            <input id="contact_message" class="form-control">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" onclick="sendEmail()">Submit</button>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input id="contact_name" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label for="content" class="form-label">Write your message</label>
-                                <input id="contact_message" class="form-control">
-                            </div>
-                            <button type="submit" class="btn btn-primary" onclick="sendEmail()">Submit</button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
