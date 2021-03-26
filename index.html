@@ -27,11 +27,25 @@
         <script src="https://smtpjs.com/v3/smtp.js"></script>
         <script src="js/contact_form.js"></script>
         <script>
+            function findWithBackground(current) {
+                if (current.className.split(" ").includes("main-with-background")) {
+                    let color = current.style.getPropertyValue("background-color");
+                    if (color)
+                        document.getElementById("header-update-color").style.backgroundColor = color;
+                    return;
+                }
+                let parent = current.parentNode;
+                if (parent && parent.className)
+                    findWithBackground(parent);
+            }
+
             window.onload = function() {
                 var firstScrollSpyEl = document.querySelector('[data-bs-spy="scroll"]')
                 window.addEventListener('activate.bs.scrollspy', function () {
                     let selectedId = bootstrap.ScrollSpy.getInstance(firstScrollSpyEl)._activeTarget;
                     let elts = document.getElementById(selectedId.substring(1, selectedId.length));
+                    console.log(selectedId);
+                    findWithBackground(elts);
                 })
             }
         </script>
