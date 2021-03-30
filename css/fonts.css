@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'ibm_plex_sansregular';
+    src: url('https://atreides-esg.github.io/assets/Fonts/ibm_plex_sans/ibmplexsans-regular-webfont.woff2') format('woff2'),
+         url('https://atreides-esg.github.io/assets/Fonts/ibm_plex_sans/ibmplexsans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
