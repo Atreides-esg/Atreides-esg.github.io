@@ -12,24 +12,6 @@ body {
     font-size: 1.2em !important;
 }
 
-.btn {
-    font-size: 1em !important;
-}
-
-.btn.btn-secondary {
-    font-size: 1em !important;
-    color: #3E73FB;
-    background-color: white;
-    border: 3px solid #3E73FB;
-}
-
-.btn.btn-secondary:hover {
-    font-size: 1em !important;
-    color: white;
-    background-color: #3E73FB;
-    border: 3px solid #3E73FB;
-}
-
 h4 {
     color: #3E73FB !important;
     font-size: 2em !important;
@@ -42,19 +24,8 @@ nav .active, .nav-link:hover {
     font-weight: bold;
 }
 
-.team-card {
-    width: 14rem;
-    text-align: center;
-}
-
-.pink-bg {
-    background: #f21368;
-    height: 10px;
-}
-
-.social-img {
-    margin: 5px;
-    height: 35px;
+ul {
+    list-style-image: url("../assets/check-mark.png");
 }
 
 .acard {
@@ -76,29 +47,43 @@ nav .active, .nav-link:hover {
     object-fit: contain;
 }
 
-.stackable-container {
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template: 1fr / 1fr;
-}
-.stackable-element {
-    grid-column: 1/1;
-    grid-row: 1/1;
-    margin: 0;
-    padding: 0;
+.btn {
+    font-size: 1em !important;
 }
 
-ul {
-    list-style-image: url("../assets/check-mark.png");
+.btn.btn-secondary {
+    font-size: 1em !important;
+    color: #3E73FB;
+    background-color: white;
+    border: 3px solid #3E73FB;
 }
 
-.w-20 {
+.btn.btn-secondary:hover {
+    font-size: 1em !important;
+    color: white;
+    background-color: #3E73FB;
+    border: 3px solid #3E73FB;
+}
+
+.feature-column {
     width: 10%;
+    text-align:center;
 }
 
-.pt-5 {
-    text-align:center;
+.feature-img {
+    margin: auto;
+    padding-bottom: 20px;
+    width:30%;
+}
+
+.feature-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.feature-text {
+    font-weight: bold;
+    color: #f21368;
 }
 
 .mission-column {
@@ -113,6 +98,37 @@ ul {
     justify-content:space-between;
 }
 
+.pink-bg {
+    background: #f21368;
+    height: 10px;
+}
+
+.pt-5 {
+    text-align:center;
+}
+
+.social-img {
+    margin: 5px;
+    height: 35px;
+}
+
+.stackable-container {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template: 1fr / 1fr;
+}
+.stackable-element {
+    grid-column: 1/1;
+    grid-row: 1/1;
+    margin: 0;
+    padding: 0;
+}
+
+.team-card {
+    width: 14rem;
+    text-align: center;
+}
 
 .transparent-card {
     position:relative;
@@ -124,23 +140,6 @@ ul {
     min-width: 200px;
 }
 
-.feature-column {
+.w-20 {
     width: 10%;
-    text-align:center;
-}
-
-.feature-row {
-    display: flex;
-    justify-content: space-around;
-}
-
-.feature-img {
-    margin: auto;
-    padding-bottom: 20px;
-    width:30%;
-}
-
-.feature-text {
-    font-weight: bold;
-    color: #f21368;
 }
