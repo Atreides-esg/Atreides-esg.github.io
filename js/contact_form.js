@@ -12,6 +12,6 @@ function sendEmail() {
     From : "contact.atreides@gmail.com",
     Subject: `New contact from ${contact_name}`,
     Body: `<html>Contact from: ${contact_email}<br><br>${contact_message}</html>`
-  }).then(alert("Thank you!")
-  );
+  }).then(window.location.reload()
+  ).then(alert(`  Thank you  ${contact_name}, we will keep in touch!`));
 }
